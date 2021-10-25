@@ -2,6 +2,7 @@
 
 # TODO
 - setup database @
+- view register page
 
 # IN PROGRESS
 
