@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"   xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <div th:replace="fragments/head-css :: head-css"/>
+    <title>Home</title>
 </head>
 <body>
 
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="email *" value="" />
-    </div>
+<div class="container img-fluid">
+    <div>Start your awesome journey today!</div>
+</div>
 
-    <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password *" value="" />
-    </div>
+<div th:replace="fragments/footer-js :: footer-js"/>
+
 </body>
 </html>

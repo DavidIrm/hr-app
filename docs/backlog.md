@@ -1,18 +1,13 @@
-## PROJECT  hr-app
-## REPO     https://github.com/DavidIrm/hr-app
-- GIT       DavidIrm
-
 # 1. define objective
 
 # 2. define entities
- //tabele
+tabele
+
 # 3. create epics
+pasii fundamentali pe care il face un utilizator
 
-// pasii fundamentali pe care il face un utilizator
+- manage candidate
 
-
-  -Manage candidate
--
 # 4. create backlog
 
 ## register

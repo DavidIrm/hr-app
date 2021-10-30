@@ -1,7 +1,7 @@
 # sprint board
 
 # TODO
-- setup database @
+- setup database
 - view register page
 
 # IN PROGRESS
@@ -11,4 +11,4 @@
 
 
 # DONE
-setup git repository @dana
+setup git repository
