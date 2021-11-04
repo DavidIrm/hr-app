@@ -1,30 +1,26 @@
 # 1. define objective
-    track issues and have team visibility
+    
+    find a job
 
 # 2. define entities
 
 ## user
-    user can work on multiple projects
-    user can be assigned to multiple tasks
 
-## project
-    a project can have multiple users
-    a project can have multiple sprints
+## candidate
+- candidate applies to a job
 
-## sprint
-    a sprint can hold multiple tasks
+## employer
+- post a job
+- selects candidates
 
-## task
-    tasks must be filtered by project
+## job
 
 # 3. create epics
-- user
-- project
-- sprint
-- task
+- register
+- manage jobs
+- job applications
 
 # 4. create backlog
-- add user stories
 
 ## register
 - view register page
@@ -32,41 +28,8 @@
 - login with email and password
 - logout
 
-## forgot password
-- view forgot password page
-- reset password
+## manage jobs
 
-## manage project
-- view project list
-- create project
-- update project info
-- delete project
-- as project lead, add user to project
-- view backlog page
-- view board page
 
-## manage sprint
-- create sprint
-- update sprint info
-- delete sprint
-- add task to sprint
-- remove task from sprint
-- assign user to task
-- un-assign user from task
-- start sprint
-- complete sprint
-- view sprint total story points
+## job applications
 
-## manage task
-- view task list
-- create task
-- update task info
-- delete task
-- add task to project
-- search task
-
-## manage user
-- view users page
-- update user info
-- as admin, deactivate user
-- as admin, activate user
