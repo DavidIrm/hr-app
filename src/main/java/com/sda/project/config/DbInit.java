@@ -50,6 +50,9 @@ public class DbInit {
             createMainAdmin();
             createAdmin();
             createUser();
+
+            // TODO: create company
+
         };
     }
 

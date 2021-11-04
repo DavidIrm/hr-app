@@ -1,9 +1,9 @@
 package com.sda.project.repository;
 
-import com.sda.project.model.Employer;
+import com.sda.project.model.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EmployerRepository extends JpaRepository<Employer, Long> {
+public interface CompanyRepository extends JpaRepository<Company, Long> {
 }
