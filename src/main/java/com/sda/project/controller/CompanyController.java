@@ -20,8 +20,7 @@ public class CompanyController {
     }
 
 
-    @GetMapping("company")
-
+    @GetMapping("/company")
     public String showCompany(Model model){
 
         model.addAttribute("companyDto", companyService.findAll());
