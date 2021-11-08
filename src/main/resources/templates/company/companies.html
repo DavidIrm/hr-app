@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/head-css :: head-css"/>
+    <title>Title</title>
+</head>
+
+<body>
+<div>
+    <h1>Companies</h1>
+
+    <div class="container-fluid">
+        <div class="container">
+            <table class="table">
+
+                <!-- table header -->
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Location</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="companyDto : ${companiesDto}">
+                    <td th:text="${companyDto.name}"></td>
+                    <td th:text="${companyDto.location}"></td>
+                    <td>
+                        <!-- edit button -->
+                        <a th:href="@{/companies/{id}/edit(id = ${companyDto.id})}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+
+                        <!-- delete button -->
+                        <a th:href="@{/companies/{id}/delete(id = ${companyDto.id})}">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer-js :: footer-js"/>
+</body>
+
+</html>

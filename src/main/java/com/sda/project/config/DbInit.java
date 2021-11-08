@@ -1,11 +1,13 @@
 package com.sda.project.config;
 
 import com.sda.project.controller.exception.ResourceAlreadyExistsException;
+import com.sda.project.model.Company;
 import com.sda.project.model.Privilege;
 import com.sda.project.model.PrivilegeType;
 import com.sda.project.model.Role;
 import com.sda.project.model.RoleType;
 import com.sda.project.model.User;
+import com.sda.project.repository.CompanyRepository;
 import com.sda.project.repository.PrivilegeRepository;
 import com.sda.project.repository.RoleRepository;
 import com.sda.project.repository.UserRepository;
@@ -33,6 +35,9 @@ public class DbInit {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private CompanyRepository companyRepository;
+
     @Bean
     public CommandLineRunner initialData() {
         return args -> {
@@ -51,9 +56,15 @@ public class DbInit {
             createAdmin();
             createUser();
 
-            // TODO: create company
-
+            createCompany();
         };
+    }
+
+    private void createCompany() {
+        Company company = new Company();
+        company.setName("Oracle");
+        company.setLocation("Bucharest");
+        companyRepository.save(company);
     }
 
     private User createMainAdmin() {
