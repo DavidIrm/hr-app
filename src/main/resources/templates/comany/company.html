@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/head-css :: head-css"/>
+    <title>Title</title>
+</head>
+
+<body>
+<div>
+    <h1>Jobs</h1>
+    <div class="container-fluid">
+        <div class="container">
+            <table class="table" method="get" th:action="@{/company}" th:object="${companysDto}">
+                <!-- table header -->
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Location</th>
+
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="companyDto : ${companyDto}">
+                    <td th:text="${comapnyDtp.name}"></td>
+                    <td th:text="${company.Location}"></td>
+
+                    <td>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer-js :: footer-js"/>
+</body>
+
+</html>
