@@ -31,6 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/static/favicon.ico", "/images/**", "/js/**", "/css/**").permitAll()
 
                 // features and permissions
+                // TODO: set correct roles in production
+                .antMatchers("/jobs/**").permitAll()
                 .antMatchers("/users").hasRole("ADMIN")
                 .anyRequest().authenticated();
 
