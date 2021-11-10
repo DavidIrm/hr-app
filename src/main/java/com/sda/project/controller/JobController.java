@@ -37,4 +37,10 @@ public class JobController {
     public String delete(@PathVariable Long id) {
         return "redirect:/jobs";
     }
+
+    @PostMapping("/jobs/{id}/apply")
+    public String apply() {
+        // TODO: apply to job
+        return "redirect:/job/jobs";
+    }
 }
