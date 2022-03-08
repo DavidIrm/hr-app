@@ -1,7 +1,6 @@
 package com.sda.project.config;
 
 import com.sda.project.controller.exception.ResourceAlreadyExistsException;
-import com.sda.project.model.Company;
 import com.sda.project.model.Privilege;
 import com.sda.project.model.PrivilegeType;
 import com.sda.project.model.Role;
@@ -52,31 +51,9 @@ public class DbInit {
             createRoleIfNotFound(RoleType.USER, Set.of(readPrivilege, writePrivilege));
 
             // create main admin, admin, user
-            createMainAdmin();
             createAdmin();
             createUser();
-
-            createCompany();
         };
-    }
-
-    private void createCompany() {
-        Company company = new Company();
-        company.setName("Oracle");
-        company.setLocation("Bucharest");
-        companyRepository.save(company);
-    }
-
-    private User createMainAdmin() {
-        User admin = new User(
-                "main@gmail.com",
-                "{bcrypt}$2y$12$92ZkDrGVS3W5ZJI.beRlEuyRCPrIRlkEHz6T.7MVmH38l4/VAHhyi",
-                "jon",
-                "snow");
-        Role adminRole = roleRepository.findByType(RoleType.ADMIN).orElseThrow();
-        admin.addRole(adminRole);
-        userRepository.save(admin);
-        return admin;
     }
 
     private User createAdmin() {

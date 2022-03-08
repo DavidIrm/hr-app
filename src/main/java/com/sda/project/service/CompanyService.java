@@ -1,7 +1,5 @@
 package com.sda.project.service;
 
-
-import com.sda.project.dto.CompanyDto;
 import com.sda.project.mapper.CompanyMapper;
 import com.sda.project.model.Company;
 import com.sda.project.repository.CompanyRepository;
@@ -12,36 +10,27 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.zip.CheckedOutputStream;
 
 @Service
 public class CompanyService {
 
-    private static final Logger log = LoggerFactory.getLogger(UserService.class);
+    private static final Logger log = LoggerFactory.getLogger(CompanyService.class);
 
-    private final CompanyRepository componyRepository;
+    private final CompanyRepository companyRepository;
     private final CompanyMapper companyMapper;
-    private UserService userService;
-
 
     @Autowired
-    public CompanyService(CompanyRepository componyRepository, CompanyMapper companyMapper, UserService userService) {
-        this.componyRepository = componyRepository;
+    public CompanyService(CompanyRepository companyRepository, CompanyMapper companyMapper) {
+        this.companyRepository = companyRepository;
         this.companyMapper = companyMapper;
-        this.userService = userService;
     }
 
-    public CompanyDto save(CompanyDto companyDto){
-        Company company = companyMapper.map(companyDto);
-        Company  savedCompany = componyRepository.save(company);
-        CompanyDto savedDto = companyMapper.map(savedCompany);
-        return savedDto;
-
+    public Company save(Company company) {
+        return companyRepository.save(company);
     }
 
-    public List<CompanyDto> findAll(){
-        return componyRepository.findAll().stream()
-                .map(company-> companyMapper.map(company))
+    public List<Company> findAll() {
+        return companyRepository.findAll().stream()
                 .collect(Collectors.toList());
     }
 }

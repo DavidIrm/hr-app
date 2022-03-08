@@ -18,7 +18,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Set;
 
 @Service
@@ -68,6 +67,13 @@ public class UserService implements UserDetailsService {
                     Set<Role> roles = roleRepository.getRoles(user.getId());
                     return new UserPrincipal(user, roles);
                 })
+                .orElseThrow(() -> new UsernameNotFoundException(email + " not found"));
+    }
+
+    public User findByEmail(String email) {
+        log.info("find user by email {}", email);
+
+        return userRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException(email + " not found"));
     }
 }
